@@ -49,7 +49,7 @@ def main():
 
     htsmanager.py -d /data/aptamex/project_id/analysis_id --maxdepth 5 --operation remove --not_name "*.bam" --not_name "*.vcf.gz" --name "*" --minsize 10M
 
-         Will aggressively delete everything other than bam and vcf.gz files that is larger than 10M
+         Will aggressively delete everything other than bam and vcf.gz files larger than 10M
 
  Operations:
      remove:         Delete selected files
@@ -84,7 +84,7 @@ def main():
     parser.add_argument("--name", "--file_name",  help="UNIX find -name option", action='append', required=True)
     parser.add_argument("--type", "--find_type",  help="UNIX find -type option (default: %(default)s)", default="f", required=False)
     parser.add_argument("--notname", "--not_name",  help="UNIX find -not -name option", action='append')
-    parser.add_argument("--samtools", "--samtools_exe",  help="samtools binary (default: %(default)s)", default=samtools)
+    parser.add_argument("--samtools", "--samtools_exe",  help="samtools binary (default: %(default)s)", default=samtools_exe)
     parser.add_argument("--minsize", "--minimum_file_size", help="minimum file size to perform operation (default: %(default)s)", default="1G")
     parser.add_argument("--operation",  help="operation to perform on files (default: %(default)s)", default="remove", choices=list_operations)
     parser.add_argument("--slop", "--bamlet_extend",  help="extend upstream and downstream window around coordinate (default: %(default)s)", default=slop)
